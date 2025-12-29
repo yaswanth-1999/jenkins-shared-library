@@ -1,16 +1,12 @@
 def call() {
+
     stage('Checkout') {
-    steps {
-        
-            git branch: 'main',
-                
-                url: 'https://github.com/yaswanth-1999/spring-boot-hello-world.git'
-        
+        git branch: 'main',
+            url: 'https://github.com/yaswanth-1999/spring-boot-hello-world.git'
+    }
+
+    stage('Build') {
+        sh 'mvn clean install'
     }
 }
-
-    stage('Build')
-        sh 'mvn clean install'
-
-    }
 

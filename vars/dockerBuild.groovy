@@ -1,5 +1,5 @@
-def call(String imageName, String tag) {
-    stage('Docker Build') {
-        sh "docker build -t ${imageName}:${tag} ."
-    }
+def call(String imageName, String tag = 'latest') {
+    sh """
+        docker build -t ${imageName}:${tag} .
+    """
 }

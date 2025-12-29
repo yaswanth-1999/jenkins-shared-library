@@ -1,5 +1,5 @@
 def call() {
     stage('Build') {
-        sh 'mvn clean package'
+        sh 'mvn clean install'
     }
 }
